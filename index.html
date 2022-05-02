@@ -61,7 +61,7 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
-				alert(scrollHeight, scrollTop, clientHeight);
+				alert(`this need to show ${clientHeight}`);
 				console.log(scrollHeight, scrollTop, clientHeight, next_status);
 				loadMoreData('touch');
 			}
