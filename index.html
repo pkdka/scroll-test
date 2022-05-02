@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>This is Head Title re-deployed 23012</h1>
+	<span id="difference"></span>
 	<br/>
 	<br/>
 	<br/>
@@ -47,10 +48,12 @@
 
 <script>
 		let next_status = true;
+		let text = document.getElementById('difference');
 		window.addEventListener('scroll', () => {
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
+			text.append(scrollHeight - Math.round(scrollTop),clientHeight);
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('scroll');
@@ -61,8 +64,9 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
-			alert(scrollHeight - Math.round(scrollTop));
-			alert(clientHeight);
+			//alert(scrollHeight - Math.round(scrollTop));
+			//alert(clientHeight);
+			text.append(scrollHeight - Math.round(scrollTop),clientHeight);
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('touch');
