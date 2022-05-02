@@ -59,8 +59,8 @@
 		window.addEventListener("touchmove", () => {
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+			alert(`this need to show ${clientHeight}`);
 			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
-				alert(`this need to show ${clientHeight}`);
 				console.log(scrollHeight, scrollTop, clientHeight, next_status);
 				loadMoreData('touch');
 			}
