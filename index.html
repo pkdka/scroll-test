@@ -53,7 +53,7 @@
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
-			    loadMoreData();
+			    loadMoreData('scroll');
 			}
 		    })
 
@@ -63,7 +63,7 @@
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
-			    loadMoreData();
+			    loadMoreData('touch');
 			}
 		});
 
