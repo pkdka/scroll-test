@@ -53,7 +53,7 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
-			text.append(scrollHeight - Math.round(scrollTop),clientHeight);
+			text.append(`The diff is ${scrollHeight} - Math.round(${scrollTop}) <br/>`);
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('scroll');
