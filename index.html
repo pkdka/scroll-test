@@ -50,7 +50,6 @@
 	window.addEventListener('scroll', () => {
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-			alert(scrollHeight, scrollTop, clientHeight);
 			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
 				console.log(scrollHeight, scrollTop, clientHeight, next_status);
 				loadMoreData('scroll');
