@@ -57,20 +57,12 @@
 		})
 
 		window.addEventListener("touchmove", () => {
-			console.log('at the bottom of page')
-			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-			//alert(`this need to show ${clientHeight}`);
-			//alert(`this need to show ${scrollHeight}`);
-			//alert(`this need to show ${scrollTop}`);
-			let diff = scrollHeight - (clientHeight + scrollTop);
-			//alert(diff);
-			
-			//const fullPageHeight = document.documentElement.scrollHeight
-    			//const scrollTop = window.pageYOffset
-    			const currentScreenHeight = scrollHeight - scrollTop
-
-    			//const isBottomNotHit = currentScreenHeight + scrollTop !== scrollHeight
-			if ((currentScreenHeight + scrollTop !== scrollHeight)  && next_status) {
+			console.log('at the bottom of page');
+			const fullPageHeight = document.documentElement.scrollHeight;
+    			const scrollTop = window.pageYOffset;
+    			const currentScreenHeight = fullPageHeight - scrollTop;
+    			const isBottomNotHit = currentScreenHeight + scrollTop;
+			if (isBottomNotHit !== scrollHeight && next_status) {
 				loadMoreData('touch');
 			}
 		});
