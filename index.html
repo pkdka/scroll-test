@@ -63,7 +63,7 @@
 			//alert(`this need to show ${scrollHeight}`);
 			//alert(`this need to show ${scrollTop}`);
 			let diff = scrollHeight - (clientHeight + scrollTop);
-			if ((diff > 0 || diff < 20 ) && next_status) {
+			if (diff < 20  && next_status) {
 				loadMoreData('touch');
 			}
 		});
