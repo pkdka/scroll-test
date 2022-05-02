@@ -67,7 +67,8 @@
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
 			//alert(scrollHeight - Math.round(scrollTop));
 			//alert(clientHeight);
-			text.append(scrollHeight - Math.round(scrollTop),clientHeight);
+			const diff = scrollHeight - Math.round(scrollTop);
+			text.append(`The diff is ${diff} <br/> ${clientHeight}`);
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('touch');
