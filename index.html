@@ -53,8 +53,7 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
-			const diff = scrollHeight - Math.round(scrollTop);
-			text.append(`The diff is ${diff} <br/>`);
+
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('scroll');
@@ -65,11 +64,8 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
-			//alert(scrollHeight - Math.round(scrollTop));
-			//alert(clientHeight);
-			const diff = scrollHeight - Math.round(scrollTop);
-			text.append(`The diff is ${diff} <br/> ${clientHeight}`);
-			if( scroll_status && next_status ){
+			
+			if( (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('touch');
 			}
