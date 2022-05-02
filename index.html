@@ -60,14 +60,14 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 			alert(`this need to show ${clientHeight}`);
-			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
-				console.log(scrollHeight, scrollTop, clientHeight, next_status);
+			alert(`this need to show ${scrollHeight}`);
+			alert(`this need to show ${scrollTop}`);
+			if ((scrollTop + clientHeight >= scrollHeight)) {
 				loadMoreData('touch');
 			}
 		});
 
 		async function loadMoreData(type) {
-			
 			alert(`Event type is ${type}`)
 		}
 </script>
