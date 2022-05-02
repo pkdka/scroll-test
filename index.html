@@ -7,7 +7,7 @@
 	<title>Scroll Test</title>
 </head>
 <body>
-	<h1>This is Head Title re-deployed 23</h1>
+	<h1>This is Head Title re-deployed 230</h1>
 	<br/>
 	<br/>
 	<br/>
@@ -59,10 +59,11 @@
 		window.addEventListener("touchmove", () => {
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-			alert(`this need to show ${clientHeight}`);
-			alert(`this need to show ${scrollHeight}`);
-			alert(`this need to show ${scrollTop}`);
-			if ((scrollTop + clientHeight >= scrollHeight)) {
+			//alert(`this need to show ${clientHeight}`);
+			//alert(`this need to show ${scrollHeight}`);
+			//alert(`this need to show ${scrollTop}`);
+			let diff = scrollHeight - (clientHeight + scrollTop);
+			if ((diff > 0 || diff < 20 ) && next_status) {
 				loadMoreData('touch');
 			}
 		});
