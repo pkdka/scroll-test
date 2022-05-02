@@ -62,7 +62,7 @@
     			const scrollTop = window.pageYOffset;
     			const currentScreenHeight = fullPageHeight - scrollTop;
     			const isBottomNotHit = currentScreenHeight + scrollTop;
-			if (isBottomNotHit !== scrollHeight && next_status) {
+			if (isBottomNotHit !== fullPageHeight && next_status) {
 				loadMoreData('touch');
 			}
 		});
