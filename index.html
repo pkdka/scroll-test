@@ -46,24 +46,24 @@
 	<h5>Is this working</h5>
 
 <script>
-	let next_status = true;
-	window.addEventListener('scroll', () => {
+		let next_status = true;
+		window.addEventListener('scroll', () => {
 			console.log('at the bottom of page')
-			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
-				console.log(scrollHeight, scrollTop, clientHeight, next_status);
-				loadMoreData('scroll');
+			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
+			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
+			if( scroll_status && next_status ){
+			    console.log(scroll_status,next_status);
+			    loadMoreData();
 			}
-		})
+		    })
 
 		window.addEventListener("touchmove", () => {
-			console.log('at the bottom of page');
-			const fullPageHeight = document.documentElement.scrollHeight;
-    			const scrollTop = window.pageYOffset;
-    			const currentScreenHeight = fullPageHeight - scrollTop;
-    			const isBottomNotHit = currentScreenHeight + scrollTop;
-			if (isBottomNotHit !== fullPageHeight && next_status) {
-				loadMoreData('touch');
+			console.log('at the bottom of page')
+			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
+			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
+			if( scroll_status && next_status ){
+			    console.log(scroll_status,next_status);
+			    loadMoreData();
 			}
 		});
 
