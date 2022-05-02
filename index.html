@@ -61,8 +61,8 @@
 			console.log('at the bottom of page')
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
-			h1.append(scrollHeight - Math.round(scrollTop));
-			h1.append(`<br/>${clientHeight}`);
+			alert(scrollHeight - Math.round(scrollTop));
+			alert(clientHeight);
 			if( scroll_status && next_status ){
 			    console.log(scroll_status,next_status);
 			    loadMoreData('touch');
