@@ -64,7 +64,13 @@
 			//alert(`this need to show ${scrollTop}`);
 			let diff = scrollHeight - (clientHeight + scrollTop);
 			//alert(diff);
-			if (diff == 60  && next_status) {
+			
+			//const fullPageHeight = document.documentElement.scrollHeight
+    			//const scrollTop = window.pageYOffset
+    			const currentScreenHeight = scrollHeight - scrollTop
+
+    			//const isBottomNotHit = currentScreenHeight + scrollTop !== scrollHeight
+			if ((currentScreenHeight + scrollTop !== scrollHeight)  && next_status) {
 				loadMoreData('touch');
 			}
 		});
