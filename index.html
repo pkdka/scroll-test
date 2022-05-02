@@ -65,9 +65,13 @@
 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
 			
-			if( ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 2) && next_status ){
-			    console.log(scroll_status,next_status);
-			    loadMoreData('touch');
+// 			if( ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 2) && next_status ){
+// 			    console.log(scroll_status,next_status);
+// 			    loadMoreData('touch');
+// 			}
+			
+			if((window.innerHeight + window.scrollY) === document.body.offsetHeight) && next_status){
+				loadMoreData('touch');
 			}
 		});
 
