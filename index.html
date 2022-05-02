@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scroll Test</title>
+</head>
+<body>
+	<h1>This is Head Title</h1>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br /><br />
+	<h5>Is this working</h5>
+
+<script>
+	let next_status = true;
+	window.addEventListener('scroll', () => {
+			console.log('at the bottom of page')
+			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
+				console.log(scrollHeight, scrollTop, clientHeight, next_status);
+				loadMoreData('scroll');
+			}
+		})
+
+		window.addEventListener("touchmove", () => {
+			alert('This is touch event');
+			console.log('at the bottom of page')
+			const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+			if ((scrollTop + clientHeight >= scrollHeight) && next_status) {
+				console.log(scrollHeight, scrollTop, clientHeight, next_status);
+				loadMoreData('touch');
+			}
+		});
+
+		async function loadMoreData(type) {
+			
+			alert(`Event type is ${type}`)
+		}
+</script>
+</body>
+</html>
