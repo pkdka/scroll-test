@@ -49,16 +49,21 @@
 <script>
 		let next_status = true;
 		let text = document.getElementById('difference');
-		window.addEventListener('scroll', () => {
-			console.log('at the bottom of page')
-			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
-			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
+// 		window.addEventListener('scroll', () => {
+// 			console.log('at the bottom of page')
+// 			const { scrollHeight, scrollTop,clientHeight } = document.documentElement;
+// 			const scroll_status = scrollHeight - Math.round(scrollTop) === clientHeight;
 
-			if( scroll_status && next_status ){
-			    console.log(scroll_status,next_status);
-			    loadMoreData('scroll');
-			}
-		    })
+// 			if( scroll_status && next_status ){
+// 			    console.log(scroll_status,next_status);
+// 			    loadMoreData('scroll');
+// 			}
+// 		    })
+	
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+		  alert('check check')
+		}
 
 		window.addEventListener("touchmove", () => {
 			console.log('at the bottom of page')
