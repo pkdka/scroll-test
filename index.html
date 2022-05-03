@@ -62,7 +62,11 @@
 	
 		window.onscroll = function() {scrollFunction()};
 		function scrollFunction() {
-		  alert('check check')
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		    alert('true');
+		  } else {
+		    alert('false');
+		  }
 		}
 
 		window.addEventListener("touchmove", () => {
